@@ -1,0 +1,114 @@
+/* COLOUR PALETTE
+
+blue-greys
+#263238
+#37474F
+#455A64
+
+teals
+#26A69A
+#1DE9B6
+#A7FFEB
+*/
+
+:root {
+    --dk-grey: #263238;
+    --md-grey: #37474F;
+    --lt-grey: #455A64;
+    --dk-teal: #26A69A;
+    --md-teal: #1DE9B6;
+    --lt-teal: #A7FFEB;
+}
+
+body {
+    font-family: sans-serif;
+ 
+}
+
+/* Utility Classes */
+.sr-only {
+    position: absolute;
+    top: -99999px;
+    left: -99999px;
+    visibility: hidden;
+}
+
+/* Header Styles */
+header {
+    background-color: var(--dk-grey);
+    box-shadow: 0 0.3125rem 0.3125rem var(-md-grey);
+}
+
+nav {
+    margin: 0 auto;
+    max-width: 72rem;
+}
+
+ul.menu a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--dk-teal);
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 1rem;
+}
+
+ul.menu svg {
+    width: 1.25rem;
+    height: auto;
+    margin-right: 0.5rem;
+}
+
+ul.menu svg path,
+ul.menu svg rect,
+ul.menu svg polygon {
+    fill: var(--dk-teal);
+}
+
+/** order for anchor tag pseduo-classes:
+    1. link
+    2. visited
+    3. focus
+    4. hover
+    5. active
+*/
+
+ul.menu a:focus-within,    
+ul.menu a:focus svg path,
+ul.menu a:focus svg rect,
+ul.menu a:focus svg polygon,
+ul.menu a:hover,
+ul.menu a:hover svg path,
+ul.menu a:hover svg rect,
+ul.menu a:hover svg polygon { 
+    color: var(--md-teal);
+    fill: var(--md-teal);
+}
+
+ul.menu a:active,
+ul.menu a:active svg path,
+ul.menu a:active svg rect,
+ul.menu a:active svg polygon {
+    color: var(--lt-teal);
+    fill: var(--lt-teal);
+}
+
+/** creating an active state per page */
+.active-state ul.menu a.active {
+    color: var(--lt-teal);
+    fill: var(--lt-teal);
+}
+
+/**1024px*/
+@media screen and (min-width: 64rem) {
+    ul.menu {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    ul.menu li {
+        flex: 1 1 auto;
+    }
+}
+
